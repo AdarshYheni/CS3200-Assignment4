@@ -13,4 +13,4 @@ FROM (
       AND mt.Name LIKE '%MPEG%'
     GROUP BY ar.ArtistId
     HAVING COUNT(t.TrackId) >= 10
-) AS eligible_artists;
+);

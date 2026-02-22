@@ -1,5 +1,5 @@
--- SELECT * FROM albums;
--- SELECT * FROM artists;
+SELECT * FROM albums;
+SELECT * FROM artists;
 
 SELECT
     al.Title,
