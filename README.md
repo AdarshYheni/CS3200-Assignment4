@@ -13,62 +13,53 @@ Each query is stored in its own `.sql` file as required.
 ## Query Descriptions
 
 ### Query 1  
-Returns last names and emails of customers who made purchases.  
-Uses a join between `customers` and `invoices` to ensure only purchasing customers are included.  
-Duplicate customers are removed using `DISTINCT`.
+Lists last names and emails of customers who made at least one purchase.  
+Uses a join between `customers` and `invoices`.
 
 ---
 
 ### Query 2  
-Returns album names and their corresponding artist names.  
-Joins `albums` and `artists` using `ArtistId`.
+Shows each album and the artist who created it.  
+Joins `albums` and `artists`.
 
 ---
 
 ### Query 3  
-Counts the number of unique customers in each state.  
-Uses `COUNT(DISTINCT CustomerId)` and groups by state.  
-Null states are excluded.
+Counts unique customers in each state.  
+Groups by state and excludes NULL values.
 
 ---
 
 ### Query 4  
-Returns states that have more than 10 unique customers.  
-Uses `HAVING COUNT(DISTINCT CustomerId) > 10`.
+Shows states with more than 10 unique customers.  
+Uses `HAVING` to filter grouped results.
 
 ---
 
 ### Query 5  
-Finds artists who created albums with the word **"symphony"** in the title.  
-Uses `LOWER()` and `LIKE` for case-insensitive matching.
+Finds artists with albums containing the word "symphony" in the title.  
+Uses `LIKE` for substring matching.
 
 ---
 
 ### Query 6  
-Finds artists who performed MPEG tracks in either:
-- Brazilian Music playlist  
-- Grunge playlist  
-
-Uses joins across:
-- playlists  
-- playlist_track  
-- tracks  
-- media_types  
-- albums  
-- artists  
-
-Filters media types containing `"MPEG"`.
+Finds artists who performed MPEG tracks in the "Brazilian Music" or "Grunge" playlists.  
+Uses joins across playlists, tracks, media types, albums, and artists.
 
 ---
 
 ### Query 7  
-Counts how many artists have published at least 10 MPEG tracks.  
-Groups tracks by artist and filters using `HAVING COUNT(...) >= 10`.
+Counts how many artists have at least 10 MPEG tracks.  
+Groups tracks by artist and filters with `HAVING`.
 
 ---
 
 ### Query 8  
-Calculates total playlist length in **hours**.  
-Tracks store duration in milliseconds.  
+Calculates playlist length in hours.  
+Converts milliseconds to hours and shows only playlists longer than 2 hours.
 
-Conversion used:
+---
+
+### Query 9  
+Shows each customer's total spending and the average spending in their country.  
+Uses a window function to compare customers within the same country.
