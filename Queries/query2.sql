@@ -1,6 +1,3 @@
-SELECT * FROM albums;
-SELECT * FROM artists;
-
 SELECT
     al.Title,
     ar.Name

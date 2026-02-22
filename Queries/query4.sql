@@ -1,7 +1,7 @@
 SELECT
     c.State,
     COUNT(DISTINCT c.CustomerID)
-FROM customer AS c
+FROM customers AS c
 WHERE c.State IS NOT NULL
 GROUP BY c.State
 HAVING COUNT(DISTINCT c.CustomerID) > 10
