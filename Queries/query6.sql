@@ -13,6 +13,6 @@ JOIN artists AS ar
   ON ar.ArtistId = al.ArtistId
 WHERE p.Name IS NOT NULL
   AND ar.Name IS NOT NULL
-  AND p.Name IN ('Brazilian Music', 'Grunge')
+  AND (p.Name LIKE '%Brazilian Music%' OR p.Name LIKE '%Grunge%')
   AND mt.Name LIKE '%MPEG%'
 ORDER BY ar.Name;
