@@ -1,6 +1,5 @@
 SELECT
     ar.Name
-    -- al.Title
 FROM artists AS ar
 JOIN albums AS al
     ON al.ArtistId = ar.ArtistId

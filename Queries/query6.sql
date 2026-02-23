@@ -1,6 +1,5 @@
 SELECT DISTINCT
     ar.Name
-    -- mt.Name
 FROM playlists AS p
 JOIN playlist_track AS pt
   ON pt.PlaylistId = p.PlaylistId
